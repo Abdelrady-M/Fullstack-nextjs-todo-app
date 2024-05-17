@@ -8,7 +8,7 @@ import {
 import { ModeToggle } from './ModeToggle'
 const Nav = () => {
   return (
-    <nav className='container mx-auto w-full lg:w-3/4 flex items-center justify-between'>
+    <nav className='container mx-auto w-full lg:w-3/4 flex items-center justify-between my-8'>
         <ModeToggle/>
          <SignedIn>
           <UserButton />

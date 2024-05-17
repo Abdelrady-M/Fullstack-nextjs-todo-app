@@ -18,18 +18,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider >
       <html lang="en">
         <body className={inter.className}>
-    
           <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
           >
+          
+          <div className="container mx-auto flex flex-col space-y-8 items-center justify-center lg:w-3/4">
           <Nav/>
-          {children}
+            {children}
+          </div>
           </ThemeProvider>
           </body>
       </html>
