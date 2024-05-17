@@ -33,7 +33,7 @@ import { useState } from "react";
 import { Spinner } from "./Spinner";
 
 
-const AddTodoForm = () => {
+const AddTodoForm = ({userId}:{userId: string | null}) => {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -52,7 +52,7 @@ const AddTodoForm = () => {
   const onSubmit =async (data: TodoFormValues) => {
     setLoading(true);
     const {title, body, completed} = data
-    await createTodoAction({title, body, completed})
+    await createTodoAction({title, body, completed, userId})
     setLoading(false);
     setOpen(false);
   }

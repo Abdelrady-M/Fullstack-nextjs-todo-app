@@ -29,10 +29,10 @@ import TodosTableActions from "./TodosTableActions"
         <TableBody>
           {todos.map((todo) => (
             <TableRow key={todo.id}>
-              <TableCell className="font-medium">{todo.id}</TableCell>
-              <TableCell>{todo.title}</TableCell>
+              <TableCell className="font-medium">{todo?.id}</TableCell>
+              <TableCell>{todo?.title}</TableCell>
               <TableCell>
-                {todo.completed ? <Badge>Completed</Badge> : <Badge variant={'secondary'}>UnCompleted</Badge>}
+                {todo?.completed ? <Badge>Completed</Badge> : <Badge variant={'secondary'}>UnCompleted</Badge>}
                 </TableCell>
               <TableCell className="flex items-center justify-end space-x-2">
                    <TodosTableActions todo={todo}/> 
@@ -43,7 +43,7 @@ import TodosTableActions from "./TodosTableActions"
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Total</TableCell>
-            <TableCell className="text-right">{todos.length}</TableCell>
+            <TableCell className="text-right">{!todos.length ? "You Don't have any todo yet" : todos.length}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
